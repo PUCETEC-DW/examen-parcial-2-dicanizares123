@@ -9,5 +9,9 @@ app.get(res, req){
 } 
 
 app.post(res, req){
+
+} 
+
+app.delete(res,req){
     
 }
