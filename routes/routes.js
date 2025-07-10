@@ -1,9 +1,12 @@
-import app from app 
+import express, { Router } from "express";
+import controllers from "../controllers/controllers.js";
 
-app.get('tasks/') 
-app.post('tasks/{id}') 
-app.patch('tasks/task/{}') 
-app.delete('tasks/{id}')
+const router = Router();
 
+router.get("/", controllers.getAllTasks);
+router.post("/", controllers.createTask);
+router.put("/:id", controllers.updateTask);
+router.delete("/:id", controllers.deleteTask);
+router.get("/summary", controllers.getAdvancedStats);
 
-export default app
+export default router;
